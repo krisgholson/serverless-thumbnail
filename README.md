@@ -57,5 +57,5 @@ $ curl --request POST -H "Accept: image/png" -H "Content-Type: image/png" --data
 
 * Woot! Thumbnail generated and available at apigateway-thumb.png.
 
-I've found that everytime I run ```sls deploy``` to deploy my service using the serverless framework, I also have to repeat steps 8-12 so that API Gateway has the permission to invoke my Lambda service. This feels like a bug with API Gateway or a CloudFormation limitation.  *Maybe* there is a CloudFormation workaround that the serverless framework can provide. But I can certainly say that 'Execution failed due to configuration error: Unable to transform request' was not that helpful when trying to figure out what was needed to make this work.
+I've found that everytime I run ```sls deploy``` to deploy my service using the serverless framework, I also have to repeat the fix so that API Gateway has the permission to invoke my Lambda service. This feels like a bug with API Gateway or a CloudFormation limitation.  *Maybe* there is a CloudFormation workaround that the serverless framework can provide. But I can certainly say that 'Execution failed due to configuration error: Unable to transform request' was not that helpful when trying to figure out what was needed to make this work.
 
