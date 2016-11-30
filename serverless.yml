@@ -12,7 +12,7 @@ functions:
     handler: index.handler
     events:
       - http:
-          path: /
+          path: /thumbnail
           method: post
           integration: lambda
           request:
