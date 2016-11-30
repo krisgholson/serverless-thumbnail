@@ -1,0 +1,22 @@
+service: serverless-thumbnail
+frameworkVersion: 1.2.1
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  cfLogs: true
+  timeout: 60
+
+functions:
+  thumbnail:
+    handler: index.handler
+    events:
+      - http:
+          path: /
+          method: post
+          integration: lambda
+          request:
+            passThrough: WHEN_NO_TEMPLATES
+            template:
+              image/png: '{ "operation" : "thumbnail", "base64Image" : "$input.body" }'
+
