@@ -19,7 +19,7 @@ Follow these steps to replicate the problem and then make everything work
 * POST that file to your endpoint ..
 
 ```bash
-$ curl --request POST -H "Accept: image/png" -H "Content-Type: image/png" --data-binary "@apigateway.png" https://92r2q9ff4a.execute-api.us-east-1.amazonaws.com/dev/thumbnail > apigateway-thumb.png
+$ curl --request POST -H "Accept: image/png" -H "Content-Type: image/png" --data-binary "@apigateway.png" https://XXXXX.execute-api.us-east-1.amazonaws.com/dev/thumbnail > apigateway-thumb.png
 ```
 
 * If you open apigateway-thumb.png in a text editor, you'll find you got a pretty generic error message .. ```{"message": "Internal server error"}``` This didn't come from your Lambda function, but was caused by an API Gateway configuration error. You can take my word for it, or enable logging for API Gateway using the excellent instructions here .. https://kennbrodhagen.net/2016/07/23/how-to-enable-logging-for-api-gateway/. After you've enabled logging and POSTed to your endpoint using curl again, you'll see some not-terribly-helpful log entries in your API Gateway logs (located in CloudWatch if you followed the instructions from Ken's blog) ..
